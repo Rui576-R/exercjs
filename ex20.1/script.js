@@ -4,23 +4,23 @@ function estação() {
     let estação
 
     // Remove espaços e transforma em maiúsculas
-    let mês = entrada.trim().toLocaleUpperCase
+    let mês = entrada.trim().toUpperCase()
 
     switch (mês) {
         // Janeiro, Fevereiro, Março
         case '1':
         case '01':
-        case 'Janeiro':
+        case 'JANEIRO':
         case '2':
         case '02':
-        case 'Fevereiro':
+        case 'FEVEREIRO':
         case '3':
         case '03':
-        case 'Março':
-        case 'Marco':
+        case 'MARÇO':
+        case 'MARCO':
             estação = 'INVERNO'
-            break;
-        
+            break
+
         // Abril, Maio, Junho
         case '4':
         case '04':
@@ -32,7 +32,7 @@ function estação() {
         case '06':
         case 'JUNHO':
             estação = 'PRIMAVERA'
-            break;
+            break
 
         // Julho, Agosto, Setembro
         case '7':
@@ -45,7 +45,7 @@ function estação() {
         case '09':
         case 'SETEMBRO':
             estação = 'VERÃO'
-            break;
+            break
 
         // Outubro, Novembro, Dezembro
         case '10':
@@ -55,12 +55,17 @@ function estação() {
         case '12':
         case 'DEZEMBRO':
             estação = 'OUTONO'
-            break;
+            break
 
-            default:
-                estação = 'INDEFINIDA'
-                break;
-        }
+        default:
+            estação = 'INDEFINIDA'
+            break
+    }
 
-        saida.innerHTML = `<p>No mês <mark>${entrada}</mark>, estamos na estação<mark><strong>${estação}</strong></mark></p>`
+    saida.innerHTML = `
+        <p>
+            No mês <mark>${entrada}</mark>, estamos na estação
+            <mark><strong>${estação}</strong></mark>.
+        </p>
+    `
 }
